@@ -26,10 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-34o0i&pqslhz4*9#m$ryiv^fvgs87jmro!s7jj02g*ue!q&%ln'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['backendcoin.herokuapp.com']
 
+CORS_ALLOWED_ORIGINS = [
+    "https://backendcoin.herokuapp.com",
+    'https://helpful-travesseiro-41a3ac.netlify.app/',
+ 
+]
 
 # Application definition
 
@@ -43,6 +48,7 @@ INSTALLED_APPS = [
 
     #Application installés
     'rest_framework',
+    'corsheaders'
     
     'channels',
     
@@ -54,6 +60,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
