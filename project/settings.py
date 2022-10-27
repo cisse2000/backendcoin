@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 
     #Application installés
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
     
     'channels',
     
